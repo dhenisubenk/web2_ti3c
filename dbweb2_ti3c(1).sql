@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 11, 2023 at 09:27 AM
+-- Generation Time: Feb 08, 2023 at 09:27 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.27
 
@@ -40,10 +40,30 @@ CREATE TABLE `mahasiswa` (
 
 INSERT INTO `mahasiswa` (`nim`, `nama`, `jurusan`, `alamat`) VALUES
 ('123', 'Dheni', 'Teknik Informatika', 'Ambon'),
-('2213231', 'asd', 'asd', 'asd'),
-('222', 'asdasd', 'asdsad', 'asd'),
-('321', 'Tarjo', 'Manajemen Informatika', 'Ambon'),
-('332323', 'sada', 'asd', 'asd');
+('222', 'Jaenudin', 'Teknik Informatika', 'Jl. Batu Merah, Kota Ambon'),
+('234', 'Tarjo', 'Sistem Informasi', 'Ambon'),
+('321', 'Tarjo', 'Manajemen Informatika', 'Ambon');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `level` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `password`, `level`) VALUES
+(2, 'admin', '$2y$10$sHRAXCCeAIbnDycQWkdsguhoq6KYZZw/GnYOPfQ.B1na00SJFlhF.', 'Admin'),
+(3, 'user', '$2y$10$E/Al0XhXPTCufa3DN4nK3eXD9HBTSE3c/O/dVC3pQOhrpYCyBYzwe', 'User');
 
 --
 -- Indexes for dumped tables
@@ -54,6 +74,22 @@ INSERT INTO `mahasiswa` (`nim`, `nama`, `jurusan`, `alamat`) VALUES
 --
 ALTER TABLE `mahasiswa`
   ADD PRIMARY KEY (`nim`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

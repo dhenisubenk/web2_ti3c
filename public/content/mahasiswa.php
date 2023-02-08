@@ -18,9 +18,9 @@
                         <label class="form-label" for="">Jurusan</label>
                         <input type="text" name="jurusan" class="form-control" placeholder="Masukan Jurusan Anda">
                     </div>
-                    <div class="mb-">
+                    <div class="mb-3">
                         <label class="form-label" for="">Alamat</label>
-                        <textarea name="alamat" class="form-control" rows="5" placeholder="Msaukan Alamat"></textarea>
+                        <input type="text" name="alamat" class="form-control" placeholder="Masukan Alamat..">
                     </div>
                     <div class="mb-1">
                         <button type="submit" class="btn btn-primary"><i class="bi bi-send"></i> Simpan</button>
@@ -53,7 +53,10 @@
                                     <td>$row[nama]</td>
                                     <td>$row[jurusan]</td>
                                     <td>$row[alamat]</td>
-                                    <td></td>
+                                    <td>
+                                        <a href='index.php?page=mahasiswa_edit&nim=$row[nim]' class='btn btn-sm btn-warning'>Edit</a>
+                                        <a href='index.php?page=mahasiswa_delete&nim=$row[nim]' class='btn btn-sm btn-danger' onclick=\"return confirm('Hapus Data?')\">Delete</a>
+                                    </td>
                             </tr>";
                         }
                         ?>
